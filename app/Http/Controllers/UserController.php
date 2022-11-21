@@ -22,4 +22,19 @@ class UserController extends Controller
 
         return response(['user'=>$user,'token'=>$token]);
     }
+
+    public function login(Request $request){
+        $data = $request->validate([
+            'email'     =>  'required',
+            'password'  =>  'required'
+        ]);
+
+        if(!auth()->attempt($data)){
+            return response(['message'=>'Invalid Details'],403);
+        }
+
+        $token = auth()->user()->createToken('Access Token')->accessToken;
+
+        return response(['token'=>$token],200);
+    }
 }
