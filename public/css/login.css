@@ -1,0 +1,21 @@
+.log-in-page{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+#login-card{
+    padding: 100px 15px 15px 15px;
+    background-color: #ff4dff;
+}
+
+#login-button{
+    max-width: 85px;
+    align-self: flex-end;
+    /* float: right; */
+}
