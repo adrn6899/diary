@@ -18,3 +18,5 @@ Route::get('/', function () {
 });
 
 Route::get('/login_page', 'App\Http\Controllers\AuthController@index');
+Route::get('/notes','App\Http\Controllers\NoteController@index');
+Route::get('/fetch_notes','App\Http\Controllers\NoteController@fetch');
