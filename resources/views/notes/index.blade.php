@@ -1,6 +1,6 @@
 @extends('layouts.layouts')
 @section('css')
-    <link href={{asset('css/card.css')}} rel="stylesheet">
+    <link href="{{asset('css/card.css')}}" rel="stylesheet">
 @endsection
 
 @section('content')
