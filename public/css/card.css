@@ -11,7 +11,7 @@
     float: left;
     width: 25%;
     padding: 10px 10px 10px;
-    margin-right: -80px;
+    /* margin-right: -80px; */
   }
   
   /* Remove extra left and right margins, due to padding */

@@ -16,4 +16,13 @@ class NoteController extends Controller
 
         return response()->json($note);
     }
+
+    public function getNote(Request $request){
+        // dd($request->all());
+        $id = $request->id;
+        $note = Note::where('id',1)->get();
+
+        // dd($note);
+        return response()->json($note);
+    }
 }

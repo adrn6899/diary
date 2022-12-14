@@ -3,14 +3,37 @@
 
     function viewItem(){
         $('.btn-view-item').on('click', function(e){
-            // console.log(e);
-            alert($(this).val());
+            var id = $(this).val();
+            e.preventDefault();
+            $.ajax({
+                type: "GET",
+                url:"/view_note",
+                dataType:"json",
+                data: id,
+                processData: false,
+                contentType: false,
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function(result){
+                    console.log(result);
+                    $('#exampleModalLabel').val(result[0].title);
+                    $('#input-sample').val(result[0].title);
+                    $('#notesModal').modal('show');
+                    // return result;
+                },
+                error: function(error){
+                    console.log(error);
+                },
+    
+                
+            });
         });
     }
 
     function deleteItem(){
         $('.btn-delete-item').on('click', function(e){
-            alert($(this).val());
+            var id = $($this).val();
         });
     }
 
