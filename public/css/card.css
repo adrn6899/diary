@@ -11,10 +11,11 @@
     float: left;
     width: 25%;
     padding: 10px 10px 10px;
+    margin-right: -80px;
   }
   
   /* Remove extra left and right margins, due to padding */
-  .item-row {margin: 10px 10px 10px;}
+  .item-row {margin: 10px -3% 0px 10px;}
   
   /* Clear floats after the columns */
   .item-row:after {
