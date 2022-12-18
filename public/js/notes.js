@@ -1,6 +1,15 @@
 (function(){
     "use strict";
 
+    function editNote(){
+        $('.edit-note').on('click', function(e){
+            e.preventDefault();
+
+            $('input[name="note-title"]').attr('disabled', false);
+            $('input[name="note-content"],textarea').attr('disabled', false);
+        })
+    }
+
     function viewItem(){
         $('.btn-view-item').on('click', function(e){
             var id = $(this).val();
@@ -17,10 +26,12 @@
                 },
                 success: function(result){
                     console.log(result);
-                    $('#exampleModalLabel').val(result[0].title);
-                    $('#input-sample').val(result[0].title);
+                    $('#exampleModalLabel').text(result[0].title);
+                    $('#notesModal').append('<input type="hidden" value="'+id+'" id="note-id" name="note-id">');
+                    $('#note-title').val(result[0].title);
+                    $('#note-content').val(result[0].content);
                     $('#notesModal').modal('show');
-                    // return result;
+                    editNote();
                 },
                 error: function(error){
                     console.log(error);

@@ -50,3 +50,10 @@
   .btn-delete-item{
     float:right;
   }
+
+  .delete-note{
+    float: right;
+  }
+  .edit-note{
+    float: right;
+  }
