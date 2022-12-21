@@ -5,6 +5,7 @@
 
 @section('content')
     @section('header')
+      @include('layouts.nav')
     @endsection
     <div class="item-row">
 
@@ -23,6 +24,7 @@
                     <label for="note-title">Title:</label>
                   </div>
                   <div class="col">
+                    <input type="hidden" id="note-id">
                     <input class="form-control" type="text" id="note-title" name="note-title" disabled>
                   </div>
                 </div>
@@ -45,7 +47,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="button" class="btn btn-primary save-note">Save changes</button>
             </div>
           </div>
         </div>
