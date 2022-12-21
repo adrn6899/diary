@@ -15,6 +15,7 @@
   color: black;
 }
 
-.top-nav .add-note-btn{
+.top-nav #add-note-btn{
+    color: white;
     float: right;
 }
