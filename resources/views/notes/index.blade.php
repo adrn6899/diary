@@ -52,6 +52,8 @@
           </div>
         </div>
       </div>
+    </form>
+    <form action="#" id="add-notes-form" enctype="multipart/form-data">
       <div class="modal fade" id="addNotesModal" tabindex="-1" role="dialog" aria-labelledby="addNotesModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -64,8 +66,7 @@
                     <label for="note-title">Title:</label>
                   </div>
                   <div class="col">
-                    {{-- <input type="hidden" id="note-id"> --}}
-                    <input class="form-control" type="text" id="add-note-title" name="add-note-title">
+                    <input class="form-control" type="text" id="add-note-title" name="add_note_title">
                   </div>
                 </div>
                 <div class="row mb-3">  
@@ -73,13 +74,18 @@
                     <label for="note-content" id="content">Content:</label>
                   </div>
                   <div class="col">
-                    <textarea class="form-control" id="add-note-content" name="add-note-content" rows="3" cols="45"></textarea>
+                    <textarea class="form-control" id="add_note_content" name="add_note_content" rows="3" cols="45"></textarea>
+                  </div>
+                </div>
+                <div class="row mb-3">  
+                  <div class="col-md-2">
+                    <input type="file" name="image" id="image">
                   </div>
                 </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary add-note">Save</button>
+              <button type="submit" class="btn btn-primary add-note">Save</button>
             </div>
           </div>
         </div>

@@ -25,6 +25,20 @@ class NoteController extends Controller
         // dd($note);
         return response()->json($note);
     }
+    
+    public function create(Request $request){
+        // dd($request->all());
+        $note = new Note;
+        $note->title = $request->add_note_title;
+        $note->content = $request->add_note_title;
+        $file['image'] = $request->add_note_title.".".$request->image->extension();
+        $request->image->move('files/img/',$file['image']);
+        $path = 'files/img/'.$file['image'];
+        $note->image = $path;
+        $note->save();
+
+        return response()->json(["message"=>"success"],200);
+    }
 
     public function edit(Request $request){
         // dd($request->all());
@@ -38,4 +52,5 @@ class NoteController extends Controller
             return response()->json("error");
         }
     }
+
 }

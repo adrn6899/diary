@@ -22,3 +22,4 @@ Route::get('/notes',[App\Http\Controllers\NoteController::class, 'index']);
 Route::get('/fetch_notes',[App\Http\Controllers\NoteController::class, 'fetch']);
 Route::post('/view_note',[App\Http\Controllers\NoteController::class, 'getNote']);
 Route::post('/edit',[App\Http\Controllers\NoteController::class, 'edit']);
+Route::post('/create',[App\Http\Controllers\NoteController::class, 'create']);

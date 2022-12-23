@@ -105,9 +105,39 @@
         });
     }
 
+    function create(){
+        $('#add-notes-form').on('submit', function(e){
+            e.preventDefault();
+            // alert("trying to add new note");
+            var data = new FormData(this);
+            // data.append('title',$('#add-note-title').val());
+            // data.append('content',$('#add-note-content').val());
+            // data.append('image',$('#image').val());
+            
+            $.ajax({
+                type: "POST",
+                url: "/create",
+                dataType: "json",
+                data: data,
+                processData: false,
+                contentType: false,
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function(result){
+
+                },
+                error: function(error){
+                    console.log(error);
+                }
+            });
+        });
+    }
+
     $(function(){
         fetchNotes();
         submit();
+        create();
     });
 
 })();
